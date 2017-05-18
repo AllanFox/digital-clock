@@ -36,10 +36,29 @@ weekday[6] = "Saturday";
 
 var n = weekday[d.getDay()];
 
+var dd = d.getDate();
+var mm = d.getMonth() + 1;
+var yyyy = d.getFullYear();
+
+if(dd < 10) {
+  dd = "0" + dd
+}
+
+if(mm < 10) {
+  mm = "0" + mm
+}
+
+var today = dd + " / " + mm + " / " + yyyy
 var displayWeekday = document.getElementById('day');
+var displayDate = document.getElementById('date');
 
 whatDayIsIt();
+whatDateIsIt();
 
 function whatDayIsIt() {
   displayWeekday.innerText = n ;
+}
+
+function whatDateIsIt() {
+  displayDate.innerText = today;
 }
